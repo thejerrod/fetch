@@ -1,4 +1,3 @@
-# fetch
 
 # The BIG-IP REST Data Fetcher
 
@@ -10,6 +9,7 @@ This script fetches data from BIG-IP Classic REST endpoints based on IP addresse
 - Saves the responses in YAML format for easy reading and further processing.
 - Supports concurrent fetching with multiple threads to speed up the data retrieval process.
 - Configurable timeout for API requests.
+- Automatically displays help information if no arguments are provided.
 
 ## Requirements
 
@@ -61,6 +61,14 @@ You can adjust the timeout for each API request using the `--timeout` argument (
 python fetch.py --ip_input 192.168.1.1 --timeout 5
 ```
 
+### Display Help Information
+
+If no arguments are provided, the script will display the help message with usage examples:
+
+```bash
+python fetch.py
+```
+
 ## Command-Line Arguments
 
 - `--ip_input`: Single IP address or IP range in CIDR format (e.g., `192.168.1.0/24`).
@@ -92,6 +100,3 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 ## Disclaimer
 
 This script is for informational and educational purposes only. Use it responsibly and ensure you have permission to access the targeted devices.
-
----
-
