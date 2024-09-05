@@ -23,8 +23,8 @@ This script fetches data from BIG-IP Classic REST endpoints based on IP addresse
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/big-ip-rest-fetcher.git
-   cd big-ip-rest-fetcher
+   git clone https://github.com/thejerrod/fetch.git
+   cd fetch
    ```
 
 2. Install the required dependencies:
@@ -42,7 +42,7 @@ You can run the script with different options to specify how to fetch data from 
 Use the `--ip_input` argument to specify a single IP address or a range in CIDR format.
 
 ```bash
-python fetch_data.py --ip_input 192.168.1.0/24
+python fetch.py --ip_input 192.168.1.0/24
 ```
 
 ### Fetch from a File with IP Addresses
@@ -50,7 +50,7 @@ python fetch_data.py --ip_input 192.168.1.0/24
 Use the `--ip_file` argument to provide a text file containing a list of IP addresses, one per line.
 
 ```bash
-python fetch_data.py --ip_file ips.txt
+python fetch.py --ip_file ips.txt
 ```
 
 ### Timeout Configuration
@@ -58,7 +58,7 @@ python fetch_data.py --ip_file ips.txt
 You can adjust the timeout for each API request using the `--timeout` argument (default is 3 seconds).
 
 ```bash
-python fetch_data.py --ip_input 192.168.1.1 --timeout 5
+python fetch.py --ip_input 192.168.1.1 --timeout 5
 ```
 
 ## Command-Line Arguments
