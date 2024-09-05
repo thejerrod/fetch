@@ -1,12 +1,13 @@
 
 # The BIG-IP REST Data Fetcher
 
-This script fetches data from BIG-IP Classic REST endpoints based on IP addresses or network ranges. It saves the fetched data to YAML files for further analysis.
+This script fetches data from BIG-IP Classic and NEXT REST endpoints based on IP addresses or network ranges. It saves the fetched data to YAML files or displays the fetched data in a human-readable format.
 
 ## Features
 
 - Fetch data from BIG-IP REST endpoints using single IPs, ranges in CIDR notation, or from a list of IPs in a file.
-- Saves the responses in YAML format for easy reading and further processing.
+- Display the responses in a human-readable format by default.
+- Optionally, save the responses in YAML format for easy reading and further processing.
 - Supports concurrent fetching with multiple threads to speed up the data retrieval process.
 - Configurable timeout for API requests.
 - Automatically displays help information if no arguments are provided.
@@ -53,6 +54,14 @@ Use the `--ip_file` argument to provide a text file containing a list of IP addr
 python fetch.py --ip_file ips.txt
 ```
 
+### Save to File
+
+By default, the script displays the responses to stdout. Use the `--output file` argument to save the responses to YAML files instead.
+
+```bash
+python fetch.py --ip_input 192.168.1.0/24 --output file
+```
+
 ### Timeout Configuration
 
 You can adjust the timeout for each API request using the `--timeout` argument (default is 3 seconds).
@@ -74,12 +83,13 @@ python fetch.py
 - `--ip_input`: Single IP address or IP range in CIDR format (e.g., `192.168.1.0/24`).
 - `--ip_file`: Text file containing a list of IP addresses, one per line.
 - `--timeout`: Timeout for the API request in seconds (default is 3 seconds).
+- `--output`: Output type, either 'stdout' to display the results (default) or 'file' to save responses to files.
 
 ## How It Works
 
 1. The script identifies the IPs to be processed based on your input.
 2. It fetches data from predefined endpoints on each IP address.
-3. Responses are saved to YAML files named `response_<ip_address>.yaml`.
+3. Depending on the chosen output, responses are either displayed in the console or saved to YAML files.
 4. Logs indicate the success, failure, or timeout status of each request.
 
 ## Example Endpoints
