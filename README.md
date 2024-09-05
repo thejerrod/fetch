@@ -1,7 +1,7 @@
 
 # The BIG-IP REST Data Fetcher
 
-This script fetches data from BIG-IP Classic and NEXT REST endpoints based on IP addresses or network ranges. It saves the fetched data to YAML files or displays the fetched data in a human-readable format.
+This script fetches data from BIG-IP Classic and NEXT REST endpoints based on IP addresses or network ranges. It saves the fetched data to YAML files or displays the fetched data in a human-readable format. The script tries to find an endpoint on port 888 (BIG-IP NEXT) first, if that times out, it moves to port 443 (BIG-IP CLassic)
 
 ## Features
 
